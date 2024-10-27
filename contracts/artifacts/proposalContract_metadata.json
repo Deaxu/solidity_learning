@@ -1,0 +1,95 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposal_number",
+						"type": "uint256"
+					}
+				],
+				"name": "approve",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "total_vote_to_end",
+						"type": "uint256"
+					}
+				],
+				"name": "create_proposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "proposal_number",
+						"type": "uint256"
+					}
+				],
+				"name": "reject",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/proposal.sol": "proposalContract"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/proposal.sol": {
+			"keccak256": "0xe9998905fac016f58103d76130b5131ecc37ea1831acd01b6636a04918b03350",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6527e906cca60442d263ba7d734a00f351ef90f0216eebb4398b1347d390bbcc",
+				"dweb:/ipfs/QmWhcUsA7PsropXTCJHru9nnXvMzQNnQ2sQwiyeUXbHjsZ"
+			]
+		}
+	},
+	"version": 1
+}
