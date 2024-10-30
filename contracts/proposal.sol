@@ -4,7 +4,7 @@ pragma solidity ^0.8.18;
 contract proposalContract{
     
     address owner;
-    uint256 proposal_count;
+    uint256 counter;
 
     constructor (){
         owner = msg.sender;
@@ -16,6 +16,7 @@ contract proposalContract{
     }
 
     struct Proposal{
+        string title;
         string description;
         uint256 approve;
         uint256 reject;
@@ -52,9 +53,10 @@ contract proposalContract{
         }
     }
 
-    function create_proposal(string memory description, uint256 total_vote_to_end) external onlyOwner {
-        Proposal storage newProposal = proposal_history[proposal_count];
+    function create_proposal(string memory title, string memory description, uint256 total_vote_to_end) external onlyOwner {
+        Proposal storage newProposal = proposal_history[counter];
         
+        newProposal.title = title;
         newProposal.description = description;
         newProposal.approve = 0;
         newProposal.reject = 0;
@@ -63,6 +65,6 @@ contract proposalContract{
         newProposal.current_state = false;
         newProposal.is_active = true;
 
-        proposal_count++;
+        counter++;
     }
 }
