@@ -58,6 +58,19 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "new_owner",
+						"type": "address"
+					}
+				],
+				"name": "setOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -88,11 +101,11 @@
 	},
 	"sources": {
 		"contracts/proposal.sol": {
-			"keccak256": "0x4608ba728c8e1285aca25ba517fdb02b287e4a9d1b3b88c503e324bf47490893",
+			"keccak256": "0x52827b1292d147c6deb4761067cc70b58b1c980951de883c4545afef5a100d1d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://33e4070ef3efff0e6bc4250de182b92e438c43b71662bd369db1d557f79e79e9",
-				"dweb:/ipfs/Qmc8daMvk6qA7nBHMDPMkxuBrtacSo2n9SKkA7kcqQAmQF"
+				"bzz-raw://3ffb650556f85535c0d072b7d17ec2a4fad15f65ed409cd5cdb79ddc20598b01",
+				"dweb:/ipfs/QmNjxvjSBL7XSKyQfSxmnvmi6PytDnRpHsKDeK98tKKPFu"
 			]
 		}
 	},

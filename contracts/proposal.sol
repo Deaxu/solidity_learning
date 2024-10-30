@@ -67,4 +67,8 @@ contract proposalContract{
 
         counter++;
     }
+
+    function setOwner(address new_owner) external onlyOwner {
+        owner = new_owner;
+    }
 }
