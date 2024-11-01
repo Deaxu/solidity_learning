@@ -13,19 +13,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "proposal_number",
-						"type": "uint256"
-					}
-				],
-				"name": "approve",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "title",
 						"type": "string"
@@ -47,16 +34,138 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getCurrentProposal",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "description",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "approve",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "reject",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pass",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "total_vote_to_end",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "current_state",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "is_active",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct proposalContract.Proposal",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "proposal_number",
+						"name": "number",
 						"type": "uint256"
 					}
 				],
-				"name": "reject",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"name": "getProposal",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "title",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "description",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "approve",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "reject",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "pass",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "total_vote_to_end",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "current_state",
+								"type": "bool"
+							},
+							{
+								"internalType": "bool",
+								"name": "is_active",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct proposalContract.Proposal",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
+				"name": "isVoted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -68,6 +177,26 @@
 					}
 				],
 				"name": "setOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "terminateProposal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "choice",
+						"type": "uint8"
+					}
+				],
+				"name": "vote",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -86,7 +215,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/proposal.sol": "proposalContract"
+			"contracts/proposal2.sol": "proposalContract"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -100,12 +229,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/proposal.sol": {
-			"keccak256": "0x52827b1292d147c6deb4761067cc70b58b1c980951de883c4545afef5a100d1d",
+		"contracts/proposal2.sol": {
+			"keccak256": "0x57b1352c0f9271e592dc493776be8320817cd9957b25bcb10cf74232a5078423",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3ffb650556f85535c0d072b7d17ec2a4fad15f65ed409cd5cdb79ddc20598b01",
-				"dweb:/ipfs/QmNjxvjSBL7XSKyQfSxmnvmi6PytDnRpHsKDeK98tKKPFu"
+				"bzz-raw://9fb44d32e90ede46b68beee3983acac62e8c61011b7aae00a84f51bd9e3905a3",
+				"dweb:/ipfs/QmTZsEWZBfQHow4fTdwSVUhSTQmquFAfMRt1hPmt84qL66"
 			]
 		}
 	},

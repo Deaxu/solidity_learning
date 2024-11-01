@@ -35,11 +35,14 @@ contract proposalContract{
         uint total_vote_to_end;
         bool current_state;
         bool is_active;
-        mapping(address => bool) hasVoted;
     }
     
     mapping (uint256 => Proposal) proposal_history;
     address[]  private voted_addresses;
+
+    function terminateProposal() external onlyOwner active(){
+        proposal_history[counter].is_active = false;
+    }
 
     function isVoted(address _address) public view returns (bool) {
         for (uint i = 0; i < voted_addresses.length; i++) {
@@ -48,6 +51,14 @@ contract proposalContract{
             }
         }
         return false;
+    }
+
+    function getCurrentProposal() external view returns(Proposal memory) {
+        return proposal_history[counter];
+    }
+
+    function getProposal(uint256 number) external view returns(Proposal memory) {
+        return proposal_history[number];
     }
 
     function vote(uint8 choice) external active newVoter(msg.sender){
@@ -95,6 +106,7 @@ contract proposalContract{
 
     function create_proposal(string memory title, string memory description, uint256 total_vote_to_end) external onlyOwner {
         Proposal storage newProposal = proposal_history[counter];
+        counter++;
         
         newProposal.title = title;
         newProposal.description = description;
@@ -102,11 +114,10 @@ contract proposalContract{
         newProposal.reject = 0;
         newProposal.pass = 0;
         newProposal.total_vote_to_end = total_vote_to_end;
-        newProposal.current_state = false;
+        newProposal.current_state = true;
         newProposal.is_active = true;
-
-        counter++;
     }
+
 
     function setOwner(address new_owner) external onlyOwner {
         owner = new_owner;
